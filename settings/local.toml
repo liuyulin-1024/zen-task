@@ -1,0 +1,36 @@
+[app]
+docs_url = "/docs"
+redoc_url = "/redocs"
+origins = ["*"]
+name = "DiamondWeb"
+env = "dev"
+need_fake = true
+white_phones = "19907965627,18770305929,18720177660,15302629914,18689466512,18814136004,15528015159,15528015158"
+
+[database]
+use_tz = false
+timezone = "Asia/Shanghai"
+
+[database.connections.default]
+engine = "tortoise.backends.asyncpg"
+
+[database.connections.default.credentials]
+user = "admin"
+password = "swc3J6iUiVhLsc8GLPF"
+host = "127.0.0.1"
+database = "zen_task"
+maxsize = 30
+port = 54321
+
+[database.apps.default]
+models = ["core.models"]
+default_connection = "default"
+
+[jwt]
+secret_key = "f2a415b47e6e13426fed4c05f4e9f557ee3cfe678c3525b4691d68e18a99a0f0"
+expires = 604800  # unit: second
+algorithm = "HS256"
+
+[celery]
+broker_url = "redis://localhost:6379/0"
+result_backend = "redis://localhost:6379/1"
