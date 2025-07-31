@@ -1,4 +1,4 @@
-FROM harbor.kidinsight.cn/backend/python-base:v1.0
+FROM harbor.autogame.ai/backend/python-base:v1.0
 
 COPY requirements.txt ./
 
